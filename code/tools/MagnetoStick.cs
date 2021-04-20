@@ -12,9 +12,10 @@ namespace Sandbox.Tools
 
 			using ( Prediction.Off() )
 			{
-                // I might not want to overwrite super's class memeber MaxTraceDistance
-                // ~56.54 hu to m based on rough doorway estimates
-                traceDistance = 75 //hu | ? // TODO: To be adjusted when tested 
+				test
+				// I might not want to overwrite super's class memeber MaxTraceDistance
+				// ~56.54 hu to m based on rough doorway estimates
+				traceDistance = 75 //hu | ? // TODO: To be adjusted when tested 
 				var input = Owner.Input;
 
 				var startPos = Owner.EyePos;
@@ -31,14 +32,14 @@ namespace Sandbox.Tools
 					return;
 
 				if ( tr.Entity.IsWorld ) 
-                {
-                    if ( this.attached )
-                    {
-                        // Spawn rope of N lengh (32hu?) to connect points of attachment
-                        {}
-                    }
+				{
+					if ( this.attached )
+					{
+						// Spawn rope of N lengh (32hu?) to connect points of attachment
+						{}
+					}
 					return;
-                }
+				}
 
 				if ( tr.Entity == target )  // Not sure what a target is
 					return;
@@ -59,20 +60,20 @@ namespace Sandbox.Tools
 
 				else
 				{
-                    if ( !input.Pressed( InputButton.Attack1 ) {
-                        // Hold Left Click to engage magnet affect. moving all items near/directional away with a small force
-                        {}
-                    };
-                    if ( !input.Pressed( InputButton.Attack2 ) {
-                        /** this.attached:False -- Right Click to grab object. Take first object on crosshair of certain distance away to hold in front of magnetostick (ragdolled if possible) 
-                            this.attached:True -- Right Click to disattach object: */
+					if ( !input.Pressed( InputButton.Attack1 ) {
+						// Hold Left Click to engage magnet affect. moving all items near/directional away with a small force
+						{}
+					};
+					if ( !input.Pressed( InputButton.Attack2 ) {
+						/** this.attached:False -- Right Click to grab object. Take first object on crosshair of certain distance away to hold in front of magnetostick (ragdolled if possible) 
+							this.attached:True -- Right Click to disattach object: */
 
-                        // Toggle attached mode
-                        {};
-                    };
-                    // target is not prop and valid
-                    // implement shove function here
-                    target = null
+						// Toggle attached mode
+						{};
+					};
+					// target is not prop and valid
+					// implement shove function here
+					target = null
 				}
 
 			}
